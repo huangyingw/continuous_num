@@ -4,34 +4,32 @@
 
 using namespace std;
 
-int palindrome_num(int num)
-{
-  int new_num=0;
-  int temp=num;
-  while ( temp )
-  {
-    new_num=new_num*10+temp%10;
-    temp/=10;
+int GetSubString(char *strSource, char *strResult) {
+  int iTmp=0, iHead=0, iMax=0;
+  for(int Index=0, iLen=0; strSource[Index]; Index++) {
+    if(strSource[Index] >= '0' && strSource[Index] <= '9' &&
+        strSource[Index-1] > '0' && strSource[Index] == strSource[Index-1]+1) {
+      iLen++;                       // 连续数字的长度增1
+    } else {                          // 出现字符或不连续数字
+      if(iLen > iMax) {
+        iMax = iLen;  iHead = iTmp;
+      }       
+      //该字符是数字，但数字不连续
+      if(strSource[Index] >= '0' && strSource[Index] <= '9') {
+        iTmp = Index;
+        iLen = 1;
+      }
+    }   
   }
-  return new_num == num;
+  for(iTmp=0 ; iTmp < iMax; iTmp++) // 将原字符串中最长的连续数字串赋值给结果串
+    strResult[iTmp] = strSource[iHead++];
+  strResult[iTmp]='\0';
+  return iMax;     // 返回连续数字的最大长度
+}
+int main() {
+  char strSource[]="ads3sl456789DF3456ld345AA";
+  char strResult[sizeof(strSource)];
+  printf("Len=%d, strResult=%s \nstrSource=%s\n",GetSubString(strSource, strResult), strResult, strSource);
 }
 
-int palindrome_str(char str[], int len)
-{
-  if (1==len)
-    return 1;
-  else if (str[len-1]!=str[0])
-    return 0;
-  else
-    return  palindrome_str(str+1,len-2);
-}
 
-int main() 
-{
-  cout<<palindrome_num(12321)<<endl;
-  cout<<palindrome_num(22321)<<endl;
-  cout<<palindrome_num(123454321)<<endl;
-  cout<<palindrome_str("1234321",7)<<endl;
-  cout<<palindrome_str("1334321",7)<<endl;
-  return 0;
-}
