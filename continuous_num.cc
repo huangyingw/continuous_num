@@ -22,9 +22,9 @@ int GetSubString(char *strSource, char *strResult) {
       }
     }   
   }
-  for(iTmp=0 ; iTmp < iMax; iTmp++) // 将原字符串中最长的连续数字串赋值给结果串
-    strResult[iTmp] = strSource[iHead++];
-  strResult[iTmp]='\0';
+  for(int i=0 ; i< iMax; i++) // 将原字符串中最长的连续数字串赋值给结果串
+    strResult[i] = strSource[iHead++];
+  strResult[iMax]='\0';
   return iMax;     // 返回连续数字的最大长度
 }
 int main() {
