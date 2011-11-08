@@ -1,3 +1,3 @@
-OBJECTS = palindrome.exe
+OBJECTS = continuous_num.exe
 include ../../GNU_makefile_template
-LOCFLAGS = -I../palindrome
+LOCFLAGS = -I../continuous_num
