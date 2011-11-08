@@ -12,7 +12,8 @@ int GetSubString(char *strSource, char *strResult) {
       iLen++;                       // 连续数字的长度增1
     } else {                          // 出现字符或不连续数字
       if(iLen > iMax) {
-        iMax = iLen;  iHead = iTmp;
+        iMax = iLen;  
+        iHead = iTmp;
       }       
       //该字符是数字，但数字不连续
       if(strSource[Index] >= '0' && strSource[Index] <= '9') {
