@@ -7,7 +7,8 @@
 
 using namespace std;
 
-int GetSubString(char *strSource, char *strResult) {
+int GetSubString(char *strSource, char *strResult) 
+{
   int iHead=0, iMax=0;
   int Index=0, iLen=0,nav=0; 
   while(strSource[Index])
