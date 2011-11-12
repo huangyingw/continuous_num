@@ -14,6 +14,7 @@ char* GetSubString(char *strSource, int len)
   int Index=0, iLen=0,nav=0; 
   while(strSource[Index])
   {
+    iLen=1;
     nav=Index;
     while(strSource[nav] >= '0' && strSource[nav] <= '9' &&
         strSource[nav-1] > '0' && strSource[nav] == strSource[nav-1]+1) 
@@ -23,11 +24,10 @@ char* GetSubString(char *strSource, int len)
     } 
     if ( iMax< iLen)
     {
-      iMax=iLen+1;
+      iMax=iLen;
       iHead=Index-1;
     }
     Index++;
-    iLen=0;
   }
   for(int i=0 ; i< iMax; i++) // 将原字符串中最长的连续数字串赋值给结果串
     strResult[i] = strSource[iHead++];
@@ -39,5 +39,8 @@ int main()
 {
   char strSource[]="ads3sl456789DF3456ld345AA";
   char * result=GetSubString(strSource,sizeof(strSource)/sizeof(char));
+  cout<<result<<endl;
+  char strSource1[]="ads3sl456789DF23456789";
+  result=GetSubString(strSource1,sizeof(strSource1)/sizeof(char));
   cout<<result<<endl;
 }
