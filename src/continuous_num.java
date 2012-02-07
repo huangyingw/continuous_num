@@ -38,20 +38,20 @@ public class continuous_num {
 	}
 
 	public static void main(String arg[]) {
-		// char[] strSource = "ads3s23456789l456789DF".toCharArray();
-		// char[] result = GetSubString(strSource);
-		// System.out.println(result);
-		//
-		// strSource = "ads3sl456789DF23456789".toCharArray();
-		// result = GetSubString(strSource);
-		// System.out.println(result);
-		//
-		// strSource = "23456789ads3sl456789DF".toCharArray();
-		// result = GetSubString(strSource);
-		// System.out.println(result);
-
-		char[] strSource = "23456789ads3sl456789DF987654321".toCharArray();
+		char[] strSource = "ads3s23456789l456789DF".toCharArray();
 		char[] result = GetSubString(strSource);
+		System.out.println(result);
+
+		strSource = "ads3sl456789DF23456789".toCharArray();
+		result = GetSubString(strSource);
+		System.out.println(result);
+
+		strSource = "23456789ads3sl456789DF".toCharArray();
+		result = GetSubString(strSource);
+		System.out.println(result);
+
+		strSource = "23456789ads3sl456789DF987654321".toCharArray();
+		result = GetSubString(strSource);
 		System.out.println(result);
 	}
 }
