@@ -1,7 +1,7 @@
 public class continuous_num {
 	static char[] GetSubString(char[] strSource) {
 		int iHead = 0, iMax = 0;
-		int index = 1, iLen = 0, nav = 0;
+		int index = 1, indexNegative = 1, iLen = 0, iLenNagative = 0, nav = 0;
 		while (index < strSource.length) {
 			iLen = 1;
 			nav = index;
@@ -9,6 +9,12 @@ public class continuous_num {
 					&& strSource[nav] <= '9' && strSource[nav - 1] >= '0'
 					&& strSource[nav] == strSource[nav - 1] + 1) {
 				iLen++; // 连续数字的长度增1
+				nav++;
+			}
+			while (nav < strSource.length && strSource[nav] >= '0'
+					&& strSource[nav] <= '9' && strSource[nav - 1] >= '0'
+					&& strSource[nav] == strSource[nav - 1] - 1) {
+				iLenNagative++; // 连续数字的长度增1
 				nav++;
 			}
 			if (iMax < iLen) {
