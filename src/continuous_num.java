@@ -53,5 +53,13 @@ public class continuous_num {
 		strSource = "23456789ads3sl456789DF987654321".toCharArray();
 		result = GetSubString(strSource);
 		System.out.println(result);
+
+		strSource = "98765432123456789ads3sl456789DF".toCharArray();
+		result = GetSubString(strSource);
+		System.out.println(result);
+
+		strSource = "23456789987654321ads3sl456789DF".toCharArray();
+		result = GetSubString(strSource);
+		System.out.println(result);
 	}
 }
